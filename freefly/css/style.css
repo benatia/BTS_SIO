@@ -1,0 +1,198 @@
+body{
+margin=0
+}
+#logo{
+width:200px;
+height:150px;
+margin-left:150px;
+}
+#titre{font-size:50px; 
+text-shadow: 8px 9px 7px rgba(150, 148, 127, 1); 
+margin-left:50px;
+color:DeepSkyBlue;
+}
+
+#pseudo{
+color:DodgerBlue;
+font-size:20px;
+}
+
+.main{
+width:80%;
+height:100px;
+
+margin:auto;
+background-color:DodgerBlue;
+}
+.ul{
+list-style:none;
+}
+
+.ul li{
+float:left;
+list-style:none;
+margin:auto;
+color:white;
+font-size:25px;
+text-align:center;
+margin-right:70px;
+margin-bottom:15px;
+
+}
+.ul li a{
+color:white;
+font-size:25px;
+font-weight: bold;
+text-decoration:none;
+}
+.page{
+width:80%;
+height:100px;
+margin:auto;
+}
+
+.art{
+margin-left:50px;
+margin-top:100px;
+height:200px;
+width:80%;
+color:CornflowerBlue;
+font-size:20px;
+
+
+}
+
+#img{
+width:250px;
+height:200px
+
+}
+.img1{
+width:250px;
+height:250px;
+float:right;
+
+}
+.img2{
+width:250px;
+height:250px;
+float:left;
+}
+
+/*******************téléchargement*****************/
+#telechargement{
+color:CornflowerBlue;
+margin:100px;
+font-size:30px;}
+
+/***************************inscription*******************/
+.inscription{
+width:60%;
+margin:auto;
+margin-top:60px;
+margin-left:400px;
+}
+.inscription input{
+border-radius : 5px;
+height:30px;
+}
+
+/*************************abonnement****************/
+
+.abonnement{
+width:60%;
+margin:auto;
+
+}
+.abonnement ul{
+list-style:none;
+
+}
+.abonnement ul li{
+list-style:none;
+text-decoration:none;
+
+}
+.abonnement ul li a{
+text-decoration:none;
+color:CornflowerBlue;
+}
+/***************************connexion*************/
+.inscri{
+color:CornflowerBlue;
+float:left;
+text-align:center;
+}
+.connexion{
+text-align:center;
+color:CornflowerBlue;
+margin-left:50px;
+}
+
+.connexion input{
+border-radius : 5px;
+height:20px;
+}
+/****************************contact************************/
+#container{
+width:50%;
+color:CornflowerBlue;
+margin:auto;
+font-size:20px;
+}
+#container .info{
+float:right;
+}
+
+/*****************************fichier*******************/
+
+#fichier{
+width:80%;
+margin:auto;
+}
+#choix{
+color:CornflowerBlue;
+font-size:20px;
+width:60%;
+margin:auto;
+}
+#choix input{
+color:CornflowerBlue;
+border-radius : 3px;
+height:25px;
+text-align:center;
+}
+#fichier td{
+color:MidnightBlue;
+font-size:25;
+}
+/*****************************partage*******************/
+
+#partage{
+width:80%;
+margin:auto;
+}
+#partage h3{
+color:CornflowerBlue;
+font-size:35px;
+}
+#partage td{
+color:MidnightBlue;
+font-size:25;
+}
+/*****************span................*/
+.error{
+color:red;
+background-color:#FFEB9E;
+text-shadow: 0px 0px 0px black;
+
+border-radius : 10px;
+}
+.sucess{
+color:green;
+background-color:#B0F2B6;
+text-shadow: 0px 0px 0px black;
+
+border-radius : 10px;
+}
+
