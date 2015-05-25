@@ -3,6 +3,9 @@
 $idconn=mysqli_connect('localhost','root','');//paramètres de connexion
 mysqli_select_db($idconn,"freefly"); //connexion à la base
 
+/*$idconn=mysqli_connect('mysql.hostinger.fr','u586532370_ben','1478963a');//paramètres de connexion
+mysqli_select_db($idconn,'u586532370_free'); //connexion à la base
+*/
 
 function inscription(){			  //fonction de l'inscription 
 	GLOBAL $idconn;         	  //rendre le variable globale 

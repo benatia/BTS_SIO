@@ -54,8 +54,8 @@ include "php/script.php";
 		<h1>Projets</h1>
 			<ul>
 				<li><a href="ppe1.php">PPE</a></li>
-				<li><a href="freefly.php">Freefly</a></li>
-				<li><a href="projet2.php">Projet 2</a></li>
+				<li><a href="freefly.php">FreeFly</a></li>
+				<li><a href="happyfree.php">HappyFree</a></li>
 				<li><a href="epreuve6.php">Epreuve6</a></li>
 			</ul>
 		<h1>Actions</h1>
