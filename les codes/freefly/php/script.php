@@ -355,18 +355,20 @@ function abonnement(){
 		}
 	}
 	
-mysqli_close($idconn);	
+//mysqli_close($idconn);	
 }
 
 function genererAbonnement(){
 	GLOBAL $idconn;
-    
-	$sql=mysqli_query($idconn,"select*from ABONNEMENT");
+	$sql=mysqli_query($idconn,"SELECT * FROM abonnement");
 	while($data=mysqli_fetch_array($sql)){
-		echo($data['abo_id']);
-	}
+		echo("<option value=".$data['abo_id'].">".$data['abo_libelle']."</option>");
+		
+	   }
+	
 	
 mysqli_close($idconn);	
+        
 }
 
 ?>

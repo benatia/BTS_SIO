@@ -5,13 +5,12 @@
 <div class="content">
 
    <?php abonnement();?>
-	<form action="#" method="post" class="ca-menu">
+	<form action="abonnement.php" method="post" class="ca-menu">
 	 <p class="grp">Choisir votre abonnement : </p>
 	<select name="abonnement">
-		<option value="1">gratuit</option>
-		<option value="2">premium</option>
-		<option value="3">pro</option>
+	    <?php genererAbonnement(); ?>	
 	</select>
+	
 	<input type="submit" value="Confirmer" name="abonner"/>
 	   
 	

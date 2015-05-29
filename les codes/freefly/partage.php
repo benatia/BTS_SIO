@@ -7,12 +7,12 @@ include "header.php";
 
 
 <div id="partage">
-<h3>Partager ses connaissance </h3>
+<h3>Partager ses connaissances </h3>
 <br/><br/>
 
 
 <form method="post" action="partage.php" >
-    <input type="text" name='motCle' placeholder="mot clé">
+    <input type="text" style="width:70px;" name='motCle' placeholder="  mot clé">
 	chercher par:
 	 <select name="rechercher">
 			<option value="1" />Utilisateur</option>
