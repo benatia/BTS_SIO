@@ -9,8 +9,12 @@ include "header.php";
 
 	<form action="fichiers.php" method="post" enctype="multipart/form-data" id="choix">
 				
-				<br/>Choisir un fichier:<input type='file'  name='fichier' /><br/><br/>                
-				<input type="submit" name="valid" value="Ajouter" />
+				<br/>Choisir un fichier:<input type='file'  name='fichier' />
+				<br/>Donner un titre:<input type='text' name='titre' />
+				
+				
+				<br/>
+                <input type="submit" name="valid" value="Ajouter" />
 				
 				<?php enregistrer();
 				

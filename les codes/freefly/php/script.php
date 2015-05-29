@@ -105,42 +105,45 @@ function enregistrer(){
 	if(isset($_POST['valid'])){
 		
 		if(isset($_FILES['fichier'])&&!empty($_FILES['fichier']['size'])){
-			$nom=$_FILES['fichier']['name'];
-			$taille=$_FILES['fichier']['size'];
-			$tmp_name=$_FILES['fichier']['tmp_name'];
-			$file_dest='telecharger/'.$nom;
-			
-			if($taille+$res1>$res2){
-				echo'<p style="color:red;font-size: 20px;">Votre espace mémoire  est insuffusant
-                        </p>';
-					
-			}else{
-				
-				$sqlquery=mysqli_query($idconn,"select fic_nom from FICHIER INNER JOIN UTILISATEUR ON 
-				fic_iduti=uti_id where uti_pseudo='$pseudo' and fic_nom='$nom'");
-			    $rows=mysqli_num_rows($sqlquery);
-				    if($rows==1){
-						echo'<p style="color:red;font-size: 20px;">ce fichier est déja existé
-                              </p>';
-						
+			if(isset($_POST['titre'])&&!empty($_POST['titre'])){
+					$nom=$_FILES['fichier']['name'];
+					$titre=$_POST['titre'];
+					$taille=$_FILES['fichier']['size'];
+					$tmp_name=$_FILES['fichier']['tmp_name'];
+					$file_dest='telecharger/'.$nom;
+					if($taille+$res1>$res2){
+						echo'<p style="color:red;font-size: 20px;">Votre espace mémoire  est insuffusant
+								</p>';
+							
 					}else{
-						$query=mysqli_query($idconn,"INSERT INTO FICHIER VALUES
-									('','$nom',null,'$taille','0',(select uti_id from 
-									UTILISATEUR WHERE uti_pseudo='$pseudo'))");
-						if(move_uploaded_file($_FILES['fichier']['tmp_name'],$file_dest)){
-							
 						
-						
-							?>
-							<script> alert("Votre fichier a été bien envoyé");</script>
-							<?php
-							
-						}else
-							 echo("<p style='color:red';>une echec pendant 
-						 le téléchargement;réessayer  s.v.p</p>");
+						$sqlquery=mysqli_query($idconn,"select fic_nom from FICHIER INNER JOIN UTILISATEUR ON 
+						fic_iduti=uti_id where uti_pseudo='$pseudo' and fic_nom='$nom'");
+						$rows=mysqli_num_rows($sqlquery);
+							if($rows==1){
+								echo'<p style="color:red;font-size: 20px;">ce fichier est déja existé
+									  </p>';
+								
+							}else{
+								$query=mysqli_query($idconn,"INSERT INTO FICHIER VALUES
+											('','$nom','$titre',null,'$taille','0',(select uti_id from 
+											UTILISATEUR WHERE uti_pseudo='$pseudo'))");
+								if(move_uploaded_file($_FILES['fichier']['tmp_name'],$file_dest)){
+									
+								
+								
+									?>
+									<script> alert("Votre fichier a été bien envoyé");</script>
+									<?php
+									
+								}else
+									 echo("<p style='color:red';>une echec pendant 
+								 le téléchargement;réessayer  s.v.p</p>");
+							}
 					}
-			}
-				
+			}else 
+				echo("<p style='color:red';>Veuillez donner un titre , s'il vous plait</p>");
+                				
 		}else
 			echo("<p style='color:red';>Veuillez selectionner un fichier s'il vous plait</p>");
 	}
@@ -151,7 +154,7 @@ function enregistrer(){
 function afficher(){
 			GLOBAL $idconn;
 			$pseudo=$_SESSION['pseudo'];
-			$sqlquery="select fic_id,fic_nom,fic_format,fic_taille,fic_partage 
+			$sqlquery="select * 
 						from FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
 						where uti_pseudo='$pseudo'" ;
 			
@@ -172,15 +175,16 @@ function afficher(){
 						$extention=pathinfo($SQLRow['fic_nom'], PATHINFO_EXTENSION);
 						
 						if(in_array($extention,$extentions)){
-							$image=$SQLRow['fic_nom'];
+							$image='telecharger/'.$SQLRow['fic_nom'];
 						}elseif(in_array($extention,$extentionsp)){
-							$image="lpdf.jpg";
+							$image="img/lpdf.jpg";
 						}else 
-							$image="fichierA.png";
+							$image="img/fichierA.png";
 						
 						$ligne.='<tr>
-							<td style="text-align:left;"><img src="telecharger/'.$image.'"style="width:30px;height:30px;margin-right:10px">'
-							.$SQLRow['fic_nom']."</td>
+							<td style="text-align:left;"><img src="'.$image.'
+							"style="width:30px;height:30px;margin-right:10px">'
+							.$SQLRow['fic_nomlo']."</td>
 							<td >".round((($SQLRow['fic_taille'])/'1024'),'2').'</td>
 							<td>'.$extention.'</td>
 							<td ><a href="telecharger.php?fic_id='. $SQLRow['fic_id'].'"><img src="img/telecharger.png"></a></td>
@@ -216,18 +220,19 @@ function supprimer(){
 		GLOBAL $idconn;
 		if(isset($_GET['fic_id'])){
 			$id=$_GET['fic_id'];
-			/*$sql2=mysqli_query($idconn,"SELECT fic_nom FROM FICHIER WHERE fic_id='$id'");
-			$rw=mysqli_num_rows($sql2);
-			if($rw==1){
-				var_dump($rw);
-				unlink('telecharger/"$rw"');
-			}*/
+			/////////////
+			   $sql1=mysqli_query($idconn,"select fic_nom FROM FICHIER WHERE fic_id='$id'"); 
+			   $data=mysqli_fetch_array($sql1);
+				$nom=$data['fic_nom'];
+				@unlink('telecharger/'.$nom);
+			
+			/////////////
 			$sql=mysqli_query($idconn,"delete FROM FICHIER WHERE fic_id='$id'"); 
 				if($sql==true){  ?>
 				      <script> alert("Votre fichier a été bien supprimé");</script>
 					  
 				      <?php 
-					     header("location:fichiers.php");
+					   header("location:fichiers.php");
 				}else  ?>
 				    <script> alert("Une erreur s'est produit pendant la supprission");</script>
 			<?php	  
@@ -270,7 +275,25 @@ function partaged(){
 
 function dossierp(){
 	GLOBAL $idconn;
-	$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id  WHERE fic_partage='1'";
+	$req1="";            //chercher
+	if(isset($_POST['chercher'])){
+		if(isset($_POST['motCle'])){
+			$motCle='%'.$_POST['motCle'].'%';
+			if($_POST['rechercher']=="1"){        //chercher par nom d'utilisateur
+			$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+			WHERE fic_partage='1' and uti_pseudo like '$motCle'";
+			}
+			if($_POST['rechercher']=="2"){     //chercher par nom de fichier
+			$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+			WHERE fic_partage='1' and fic_nomlo like '$motCle'";
+			}
+		}
+	}else
+		$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+			WHERE fic_partage='1'";
+		
+	
+	
 	$sql1=mysqli_query($idconn,$req1);
 	$ligne='<table >
 		<tr>
@@ -280,26 +303,29 @@ function dossierp(){
 			<td>Télécharger</td>
 			<td>Propriétaire</td>
 		</tr><tr><td colspan="5"></td></tr>';
-		while($fic_par=mysqli_fetch_array($sql1)){
-			$extentions=array("png","jpeg","gif","jpg","PNG","JPEG","GIF","JPG");
-			$extentionsp=array("PDF","pdf");
-			$extention=pathinfo($fic_par['fic_nom'], PATHINFO_EXTENSION);
-			
-			if(in_array($extention,$extentions)){
-				$image=$fic_par['fic_nom'];
-			}elseif(in_array($extention,$extentionsp)){
-							$image="lpdf.jpg";
-			}else
-				$image="fichierA.png";
-		    $ligne.='<tr>
-				<td style="text-align:left;"><img src="telecharger/'.$image.'"style="width:30px;height:30px;margin-right:10px">'
-					.$fic_par['fic_nom']."</td>
-				<td>".round((($fic_par['fic_taille'])/'1024'),'2').'</td>
-				<td>'.$extention.'</td>
-				<td><a href="telecharger.php?fic_id='.$fic_par['fic_id'].'"><img src="img/telecharger.png"></a></td>
-				<td>'.$fic_par['uti_pseudo'].'</td>
-			</tr>';
-			}
+		
+				while($fic_par=mysqli_fetch_array($sql1)){
+					$extentions=array("png","jpeg","gif","jpg","PNG","JPEG","GIF","JPG");
+					$extentionsp=array("PDF","pdf");
+					$extention=pathinfo($fic_par['fic_nom'], PATHINFO_EXTENSION);
+					
+					if(in_array($extention,$extentions)){
+						$image='telecharger/'.$fic_par['fic_nom'];
+					}elseif(in_array($extention,$extentionsp)){
+									$image="img/lpdf.jpg";
+					}else
+						$image="img/fichierA.png";
+					$ligne.='<tr>
+						<td style="text-align:left;"><img src="'.$image.'
+						"style="width:30px;height:30px;margin-right:10px">'
+							.$fic_par['fic_nomlo']."</td>
+						<td>".round((($fic_par['fic_taille'])/'1024'),'2').'</td>
+						<td>'.$extention.'</td>
+						<td><a href="telecharger.php?fic_id='.$fic_par['fic_id'].'"><img 
+						src="img/telecharger.png"></a></td>
+						<td>'.$fic_par['uti_pseudo'].'</td>
+					</tr>';
+					}
 	$ligne.='</table>';
 	print($ligne);
 mysqli_close($idconn);
