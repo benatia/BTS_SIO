@@ -1,16 +1,14 @@
 <?php
+$idconn=mysqli_connect('localhost','root','');
+mysqli_select_db($idconn, 'portefolio');
 
     
-GLOBAL $idconn;
-
-
-	if ((isset($_POST['check']))&&!empty($_POST['check'])){
-		$check=$_POST['check'];
-		
-        mysqli_query($idconn,"INSERT INTO VALIDER VALUES ('4','40')");
-		echo 'couou';
-		
-	}
-
-	 
-?>
+	
+               if(isset($_POST['check']) && !empty($_POST['check'])) {  
+				    $check=$_POST['check'];
+					echo "vous avez couché ";
+				}else{ 
+				    echo "remplir";
+				     }
+			
+	?>

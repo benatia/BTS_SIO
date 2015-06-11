@@ -15,6 +15,7 @@ Je m’appelle Benatia, je suis actuellement en deuxième année de BTS SIO, SLA
 
 
 Merci pour votre visite !!
+<a href="documents/e6presentation.odp">mes missions</a>
 
 </p>
 

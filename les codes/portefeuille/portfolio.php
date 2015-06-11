@@ -29,56 +29,28 @@ include "php/script.php";
 		
 	
 		<aside>
-		   <form method="post" action="portfolio.php">
-				<button type="submit" name="telecharger" style="float:right;bottom:0px;">
-					<img src="image/pdf.png" style="height:40px;width:40px;"/>
-				</button>
-				<button type="submit" name="valider" style="float:right;bottom:0px;height:40px;">
-					valider
-				</button>
-				<button type="submit" name="remplir" style="float:right;bottom:0px;height:40px;">
-					ajouter
-				</button>
-				
-				
-				
-		 </form>	
+		   	
 
 
 
 
-			<?php 
-			ob_start(); ?>
+			
 
 
 
 		<p style="margin-left:20px;font-size:17px;font-weight: bold;">NOM ET PRENOM : EL ACHIRI BENATIA BTS SIO <br/>PARCOURS SLAM</p>
 
-
+        <a style="margin:100px;font-size:20px;" href="documents/participation.pdf">Participation à un projet d’évolution d’un SI (solution
+				applicative et d’infrastructure )</a><br/>
+		<a style="margin:100px;font-size:20px;" href="documents/incident.pdf">Prise en charge d’incidents et de demandes d’assistance liés
+                         au domaine de spécialité du candidat</a><br/>
+		<a style="margin:100px;font-size:20px;" href="documents/Document_tech2.pdf">Elaboration de documents relatifs à la production et à la
+			fourniture de services</a><br/>
+		<a style="margin:100px;font-size:20px;" href="veille.php">Productions relatives à la mise en place d’un dispositif de
+			veille technologique et à l’étude d’une technologie...</a><br/><br/><br/>
+		<a style="margin:100px;font-size:40px;" href="documents/tableau.pdf">tableau de synthèse</a>
 		
-		
-<?php 
-			
-			portefolio();
-			
-if (isset($_POST['telecharger'])){
-$content=ob_get_clean();
-require("html2pdf/html2pdf.class.php");
-try{
-$pdf=new HTML2PDF('P','A4','fr');
-$pdf->writeHTML($content);
-ob_end_clean();
-$pdf->Output('tableau.pdf','D');
 
-
-}catch (HTML2PDF_exception $e){
-	die($e);
-
-}
-}
-			
-
-			?>
 		
 		</aside>
 

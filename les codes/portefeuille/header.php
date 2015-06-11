@@ -26,13 +26,7 @@ include "php/script.php";
 		<h2>Epreuves E6(projets et actions)</h2>
 		
 		<div id="social">
-			<!--<ul>
-				<li><?php reaction1(); ?></li>
-				<li><a href="#"><img src="image/Facebook.png" /></a><li>
-				<
-				<li><a href="#"><img src="image/google.png" /></a><li>
-				<li><a href="#"><img src="image/rss.png"/></a><li>
-			</ul> -->
+			
 		</div>
 		<nav id="nav">
 					<ul>
@@ -57,19 +51,21 @@ include "php/script.php";
 				<li><a href="freefly.php">FreeFly</a></li>
 				<li><a href="happyfree.php">HappyFree</a></li>
 				<li><a href="epreuve6.php">Epreuve6</a></li>
+				
 			</ul>
 		<h1>Actions</h1>
 			<ul>
 				<li><a href="stage1.php">Stage1</a></li>
 				<li><a href="stage2.php">Stage2</a></li>
-				<li><a href="#">plus>></a>
+				<li><a href="veille.php">Veille tec</a></li>
+				<!--li><a href="#">plus>></a>
 					<ul>
 						<li><a href="#">inscription</a></li>
 						<li><a href="#">connexion</a></li>
 						<li><a href="#"></a></li>
 						<li><a href="#">Epreuve6</a></li>
 					</ul>
-				</li>
+				</li-->
 			</ul>
 	    <h1><a  href="portfolio.php">Tableau de synthèse<img src="image/ts.png" style="width:30px;"/></a></h1>
 		</div>

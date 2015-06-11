@@ -190,25 +190,23 @@ position:absolute;
 
 
 #navport{
-	margin-top:0px;
-    margin-left:65%;
+    margin:auto;
+    margin-left:70%;
     height:30px;
-    background-color:beige;
-	
+    
 }
 	
 	#navport ul{
+	margin:7px;
 	list-style:none;
-    margin-right:20px;
-	position:fixed;
+    position:fixed;
 	background-color:beige;
-	margin-top:0px;
 }
 
 
 #navport ul li{
 	
-	margin-left:10px;
+	margin:10px;
     float:left;
 }
 #navport a{
@@ -388,43 +386,6 @@ footer p{
 	
 	}
 
-/*
-#social{
-margin:left:500px;
-position:absolute;
-}
-
-
-#social ul li{
-    
-	list-style:none;
-    text-align:center;
-	margin-bottom:5px;
- }
-#social ul li{
-    margin-right:1px;
-	float:left;
-    text-align:center;
-	
- }*/
- #social {
- float:right;
-   
-}
-
-#social ul{
-    position:absolute;
-	list-style:none;
-	margin-top:10px;
-	margin-left:80%;
-	height:35px;
-}
-
-
-#social li{
-	margin-right:3px;
-	float:left;
-	}
 	
 	
 		
@@ -439,17 +400,13 @@ table td{
         font-size:17px;
 		font-style: italic;
         font-weight: bold;
-
-/*position:relative;*/
-
-
 }
 
 
 
 
 table tr td ul li{
-/*visibility:hidden;*/
+
 list-style:none;
 }
 table .check {
@@ -458,40 +415,3 @@ float:left;
 margin-left:0px;
 
 }
-/*table tr td:hover ul li{
-visibility:visible;
-margin-right:0px;
-
-}
-table tr td :hover ul{
-position:relative;
-
-}
-table tr td .check {
-visibility:hidden;
-float:left;
-
-}
-table tr td:hover .check{
-visibility:visible;
-position:relative;
-text-align:left;
-}
-table tr td .choisir {
-visibility:hidden;
-position:absolute;
-}
-table tr td:hover .choisir{
-visibility:visible;
-}
-table tr td .span {
-visibility:hidden;
-float:left;
-}
-table tr td:hover .span{
-visibility:visible;
-position:relative;
-text-align:left;
-}
-
-

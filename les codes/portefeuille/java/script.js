@@ -48,6 +48,11 @@ $(document).ready(function(){
 	return valid;
 		
 	});
+	
+	
+	
+	
+	
 	/*$('.td').mouseover(function(){
 		$(this).css({'borderColor':'red','height':'400px','width':'400px'});
 

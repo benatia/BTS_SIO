@@ -44,8 +44,8 @@ ob_start();
 					<p>JQuery</p>
 				<h2>Difficultés :</h2>
 					<p>La possibilité de télécharger chaque écran.</p>
-					<p>Illuster la table de synthèse autrement.</p>
-					<p> Permettre au étudiant de remplir son portfolio d'une manière facile</p>
+					
+					
 					
 			<h2>Sources</h2>
 			<p>http://jquery.com/</p>
@@ -62,7 +62,8 @@ ob_start();
             <h3>A1.1.1 Analyse du cahier des charges d’un service à produire</h3>
 				  <p>Après l'analyse de cahier des charges (document joint) que notre professeur nous a 
 				  fourni au début de l'année on a identifié les
-				  fonctionnalités attendus pour un 'administrateur du site et pour un  client aussi.</p>
+				  fonctionnalités attendus pour un Etudiant  pour un  Jury.
+				  <a href="documents/portfolio/CDC_portfolio_Web.pdf">Cahier des charges</a></p>
 				<h4>Compétences mises en œuvre</h4> 
 					<h5>C1.1.1.2 Identifier les fonctionnalités attendues du 
 					service à produire</h5>
@@ -88,7 +89,8 @@ ob_start();
 					service et les résultats attendus </h5>
 				<h3>A1.2.5 Définition des niveaux d’habilitation associés à un service </h3>
 					<p>J'ai créé un diagramme de cas d'utilisation (document joint),pour déterminer les 
-					acteurs et leurs droits. </p>
+					acteurs et leurs droits.
+                   <a href="documents/portfolio/Diagrammedecasdutilisation2.png">diagramme de cas d'utilisation</a></p>
 				   <h4>Compétences mises en œuvre</h4> 
 				   <h5>C1.2.5.1 Recenser les utilisateurs du service, leurs rôles et leur niveau de 
 				   responsabilité</h5>
@@ -98,45 +100,34 @@ ob_start();
 				<h4>Compétences mises en œuvre</h4> 
 					<h5>C1.3.1.1 Mettre en place l’environnement de test du service</h5> 
 					<h5>C1.3.1.2 Tester le service</h5>
-			<h3>A1.4.1 Participation à un projet</h3>
-			   <p>On a travaillé ce projet ,pour gérer l'organisation et l'évolution du travail on 
-			   a utilisé GIT ,ce logiciel nous a  offert  de nombreux avantages, 
-			   comme la conservation d’un historique de chaque modification des fichiers.<br/>  
-			   Le lien https://github.com/benatia/Freefly</p> 
-			 <h4>compétences mises en œuvre </h4>
-				 <h5>C1.4.1.1 Établir son planning personnel en fonction des exigences et
-				 du déroulement du projet</h5>
-			<h3>A4.1.2 Conception ou adaptation de l’interface utilisateur d’une solution applicative</h3>
+		    <h3>A4.1.2 Conception ou adaptation de l’interface utilisateur d’une solution applicative</h3>
 				   <p> J'ai réalisé la maquette de l'application avec le logiciel Balsamiq Mockups
-				   (Document jointe ) </p>
+				   (Document jointe ) 
+				   <a href="documents/portfolio/maquette.png">maquette</a></p>
 
 			<h3>A4.1.3 Conception ou adaptation d'une base de données</h3>
 				
-				   <p>J'ai modélisé la base de données en utilisant le logiciel Power AMC  </p>
+				   <p>J'ai modélisé la base de données en utilisant le logiciel JMerise
+				   <a href="documents/portfolio/portmcd.jpg">Mcd</a></p></p>
 				  <h4>Compétences mises en œuvre</h4> 
 						<h5>C4.1.3.1 Modéliser le schéma de données nécessaire à la mise en place de
 						la solution applicative</h5>
-						<h5>C4.1.3.4 Manipuler les données liées à la solution applicative à travers
-						un langage de requête</h5>
+						
 			<h3>A4.1.6 Gestion d’environnements de développement et de test</h3>
 					<p>J'avais un serveur virtuel pour tester mon code . </p>
 				   <h4>Compétences mises en œuvre</h4>
 				   <h5>C4.1.6.1 Mettre en place et exploiter un environnement de développement</h5>
 			<h3>A4.1.7 Développement, utilisation ou adaptation de composants logiciels</h3>
-				   <p>J'ai réalisé un code avec PHP pour vérifier , pendant  l'inscription ou la connexion
+				   <p>J'ai réalisé un code avec PHP pour vérifier , pendant  la connexion ou l'envoi d' un message
 				   d'un utilisateur les informations entrées par celui ci 
-				  (si le champs est vide ,si le pseudo est déjà utilisé...) </p>
+				  (si le champs est vide ,) </p>
 				  <h4>Compétences mises en œuvre</h4>
 				   <h5>C4.1.7.5 Mettre en place des éléments de sécurité liés à l’utilisation d’un composant
 				   logiciel</h5>
 			<h3>A4.1.8 Réalisation des tests nécessaires à la validation d’éléments adaptés ou développés</h3>
 					  <p>je testais l'application à chaque que j'ajoutais une nouvelle fonctionnalité. </p>
 
-			<h3>4.1.9 Rédaction d’une documentation technique</h3>
-				 <p>Document technique ci joint expliquant le contenu du site  </p>
-				<h4>Compétences mises en œuvre</h4>
-				<h5>C4.1.9.1 Produire ou mettre à jour la documentation technique d’une solution applicative 
-				et de ses composants logiciels</h5> 
+			
 			
 	
 					

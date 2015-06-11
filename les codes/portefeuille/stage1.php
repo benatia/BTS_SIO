@@ -35,69 +35,70 @@ ob_start();
 				<p>html5/css3</p>
 			<h2>Difficultés :</h2>
 				<p>Créer un menu déroulant</p>
-			
+			<h2><a href="documents/attestation.pdf" style="color:white;">Attestation de stage</a></h2>
 
 			<h2>Activité du référentiel mis en œuvre:</h2>
 
-				<h3>A1.1.1 Analyse du cahier des charges d'un service à produire </h3>
-				<h4>Compétence mis en oeuvre</h4>
+				<h3>A1.1.1 Analyse du cahier des charges d'un service à produire</h3>
+					<h4>Compétence mise en œuvre</h4>
 					<h5>C1.1.1.2 Identifier les fonctionnalités attendues du service à produire</h5>
-					<h5>C1.1.3.1  Rédiger un compte-rendu d’entretien, de réunion </h5>
-					<h5></h5>
-					
-				
-				<h3>A1.1.3 Étude des exigences liées à la qualité attendue d’un service </h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C1.1.3.1 Recenser et caractériser les exigences liées à la qualité attendue du service à produire</h5>
-				<h3>A1.2.1 Élaboration et présentation d’un dossier de choix de solution technique </h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5>  C1.2.1.1 Recenser et caractériser des solutions répondant au cahier des charges (adaptation d’une 
-						solution existante ou réalisation d’une nouvelle)</h5>
-						<h5>C1.2.1.2 Estimer le coût d’une solution</h5>
-				<h3>A1.2.2 Rédaction des spécifications techniques de la solution retenue (adaptation d’une solution existante ou réalisation d’une 
-				nouvelle solution) </h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5>  C1.2.2.1 Recenser les composants nécessaires à la réalisation de la solution retenue</h5>
-						<h5>C1.2.2.2 Décrire l’implantation des différents composants de la solution et les échanges entre eux</h5>
-				<h3>A1.2.4 Détermination des tests nécessaires à la validation d’un service </h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C1.2.4.1 Recenser les tests d’acceptation nécessaires à la validation du service et les résultats attendus </h5>
-				<h3>A1.3.1 Test d’intégration et d’acceptation d’un service </h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5>  C1.3.1.1 Mettre en place l’environnement de test du service </h5>
-						<h5> C1.3.1.2 Tester le service</h5>
+					<p>Les demandes de l'entrepreneur sont la création d'un site web pour objectif principal  :
+					+faire la publicité pour le boutique
+					+faire la publicité de la vente en ligne ce que l'entrepreneur a fait par des boutiques Ebay
+					+attirer plus d'utilisateurs  sur sa page Facebook
+					+récupérer des photos de Facebook pour les réutiliser dans le site 
+					<a href="documents/Cahier_ch.odt">Cahier des charges</a></p>
+				<h3>A1.1.3 Étude des exigences liées à la qualité attendue d’un service</h3>
+					<h4>Compétence mise en œuvre</h4>
+					<h5>C1.1.3.1 Recenser et caractériser les exigences liées à 
+					la qualité attendue du service à produire</h5>
+					<p>Les exigences : 
+					+faire des pages simples. 
+					+illustration des produits des services par des images significatives.
+					+menu et sous menu indiquant les noms des jeux d'une manière précise pour faciliter la navigation et l'utilisation du site
+					+arriver à inciter le client à visiter la boutique eBAY</p>
+				<h3>A1.2.1 Élaboration et présentation d’un dossier de choix de solution technique</h3>
+					<h4>Compétence mise en œuvre</h4>
+					<h5>C1.2.1.1 Recenser et caractériser des solutions répondant au
+					cahier des charges (adaptation d’une 
+					solution existante ou réalisation d’une nouvelle)</h5><p>
+					l'entrepreneur demande un site statique ,alors j' ai choisi d'utiliser Html et Css 
+					qui répondent d' une manière satisfaisante au cahier des charges . </p>
+				<h3>A1.2.2 Rédaction des spécifications techniques de la solution retenue
+						(adaptation d’une solution existante ou réalisation d’une nouvelle solution)</h3>
+						<h4>Compétence mise en œuvre</h4>
+						<h5>C1.2.2.1 Recenser les composants nécessaires à la réalisation de la solution retenue</h5>
+						<p>la réalisation de la solution retenue demande l'utilisation de Html et Css </p>
+				<h3>A1.2.4 Détermination des tests nécessaires à la validation d’un service</h3>
+					<h4>Compétence mise en oeuvre</h4>
+					<h5>C1.2.4.1 Recenser les tests d’acceptation nécessaires à la validation du service et les résultats 
+					attendus</h5>
+					<p>Je testais mon code sur ma machine pour connaître et identifier les potentielles erreurs, quelles
+					soient l'organisation des composants de la page . </p>
+				<h3>A1.3.1 Test d’intégration et d’acceptation d’un service</h3>
+					<h4>Compétence mise en œuvre</h4>
+					<h5>C1.3.1.1 Mettre en place l’environnement de test du service</h5>
+					<h5>C1.3.1.2 Tester le service</h5>
+					<p>Je testais mon code sur ma machine pour connaître et identifier les potentielles erreurs, quelles
+					soient l'organisation des composants de la page . 
+					J’ai utilisé pour ça les navigateurs pour vérifier le bon fonctionnement de site .</p>
 				<h3>A1.3.3 Accompagnement de la mise en place d’un nouveau service</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C1.3.3.2 Informer et former les utilisateurs </h5>
-				<h3>A1.4.1 Participation à un projet</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C1.4.1.1 Établir son planning personnel en fonction des exigences et du déroulement du projet</h5>
-				<h3>A1.4.3 Gestion des ressources</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C1.4.3.1 Recenser les ressources humaines, matérielles, logicielles et budgétaires nécessaires à 
-						l’exécution du projet et de ses tâches personnelles</h5>
-						<h5> C1.4.3.2 Adapter son planning personnel en fonction 
-							des ressources disponibles </h5>
+					<h4>Compétence mise en oeuvre</h4>
+					<h5>C1.3.3.2 Informer et former les utilisateurs</h5>
+					<p>A la fin du stage, j'ai fait une présentation au patron de ce que j'avais fait durant les semaines
+					précédentes en expliquant comment on peut échanger le prix ou la photo d un produit ou mettre un autre produit à sa place.
+                <a href="documents/annexe1.pdf">Annexe1</a></p>
+				<h3>A1.4.3 Gestion des ressources</h3> 
+					<h4>Compétence mise en oeuvre</h4>
+					<h5>C1.4.3.1 Recenser les ressources humaines, matérielles, logicielles et
+					budgétaires nécessaires à l’exécution du projet et de ses tâches personnelles</h5>
+					<h5>C1.4.3.2 Adapter son planning personnel en fonction des ressources disponibles</h5>
+					<p>pour réaliser ce projet j'avais besoin d'un ordinateur ,navigateur ,éditeur de texte 
+					,je met  en place une planning personnel qui me permet de finir mon projet à terme .
+					<a href="documents/planning.pdf">Planning</a></p>
 				<h3>A4.1.2 Conception ou adaptation de l’interface utilisateur d’une solution applicative</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5>C4.1.2.2 Maquetter un élément de la solution applicative</h5>
-						
-				<h3>A4.1.6 Gestion d’environnements de développement et de test</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5> C4.1.6.1 Mettre en place et exploiter un environnement de développement</h5>
-						<h5> C4.1.6.2 Mettre en place et exploiter un environnement de test</h5>
-				<h3></h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5></h5>
-				<h3>A4.1.8 Réalisation des tests nécessaires à la validation d’éléments adaptés ou développés</h3>
-					<h4>Compétence mis en oeuvre</h4>
-						<h5>C4.1.8.1 Élaborer et réaliser des tests unitaires</h5>
-				
-			
-			
+				<p><a href="documents/annexe2.jpeg">Maquette</a></p>
 
-	
-	
 <?php
 if (isset($_POST['telecharger'])){
 /*if (!empty($_POST)){*/

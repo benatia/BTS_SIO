@@ -56,16 +56,18 @@ function reaction1(){
 }
 
 
+
+
 function portefolio(){		//permet l'affichage de tableau de synthèse 
 	GLOBAL $idconn;
 	$i=0;			//les variables
 	$j=0;
-	$reqprj="SELECT* FROM PROJET";          //les requettes   
+	$reqprj="SELECT* FROM projet";          //les requettes   
 	$resprj=mysqli_query($idconn,$reqprj);
 	$reqacti="SELECT*FROM ACTIVITE " ;	
 	$resacti = mysqli_query($idconn, $reqacti);
     //debut du tableau 
-	$ligne='<table style="width:80%;">  
+	$ligne='<table style="width:90%;">  
 		<tr >
 				<td style="border:0;"></td> ';     //premier ligne affichage des années 
 				'<td colspan="2">1 ERE ANNEE</td>
@@ -85,40 +87,34 @@ function portefolio(){		//permet l'affichage de tableau de synthèse
 			$ligne.='<tr>
 			<td>'.utf8_encode($SQLRow['libelle']).($j=$j+1).
 			'</td>';
-			if (isset($_POST['remplir'])){  //affichage des autres colonnes avec des cases à cocher qui contien des competences
-				for($k=1;$k<=$i;$k++){   //nombre des colonnes correspondant au nombres des projets
-					$reqcomp="SELECT COMPETENCE.libelle,comp_id FROM COMPETENCE INNER
-					JOIN ACTIVITE ON COMPETENCE.idactiv=ACTIVITE.activ_id
-					where idactiv='$j'  group by COMPETENCE.libelle,comp_id ";
-					$rescomp=mysqli_query($idconn,$reqcomp);
-					$ligne.='<td class="td"><ul><form action="" method="post" class="formulaire">';
-						while($comp=mysqli_fetch_array($rescomp)){
-									$ligne.='<li><input type="checkbox" class="check" name="check" value="'.utf8_encode($comp['libelle']).'"/>' 
-										.utf8_encode($comp['libelle']).'</li>';
-												
-								}
-								//' 
-								$ligne.='<div class="test"></div>
-								<button type="submit" name="choisir" class="choisir">choisir</button>
-									
-							
-						</form></ul>
-					</td>';
+					if (isset($_POST['remplir'])){  //affichage des autres colonnes avec des cases à cocher qui contien des competences
+						for($k=1;$k<=$i;$k++){   //nombre des colonnes correspondant au nombres des projets
+							$ligne.='<td>
+										<ul>
+											<form action="" method="post" class="formulaire">
+												<li>
+													<input type="text" name="check" class="check"
+													style="width:30px;"/>  
+													<input type="submit" name="ok" value="ok"/>
+													<div class="test"></div>
+												</li>
+											</form>
+										</ul>
+									</td>';
 
-										
-										
-				}
-			}else{	//affichage de table avec les activités validés avec un coleur different
-				for($k=1;$k<=$i;$k++){	//on peut visualiser les compétences utilisées si on survole les coses coloriés 
-					$ligne.='<td class="td1" style="width:81px;position:relative;">
-						<ul>
-							<li >cvcvcvvvvvvvv vvvvvvvvvvv</li>
-							<li>cvcvcvvvvvvv vvvvvvvvvvvv</li>
-							<li>cvcvcvvvvvvv vvvvvvvvvvvv</li>
-						</ul>
-					</td>';
-					}
-				}					
+												
+												
+						}
+					}else{	//affichage de table avec les activités validés avec un coleur different
+						for($k=1;$k<=$i;$k++){	//on peut visualiser les compétences utilisées si on survole les coses coloriés 
+							$ligne.='<td class="td1" style="width:81px;position:relative;">
+								<ul>
+									<li >cvcvcvvvvvvvv</li>
+								</ul>
+							</td>';
+							
+						}
+					}					
 			$ligne.='</tr>';
 		}
 						

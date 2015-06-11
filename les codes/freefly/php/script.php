@@ -20,10 +20,10 @@ function inscription(){			  //fonction de l'inscription
 			if($mdp==$cmdp){    
 				$mdp=md5($mdp);
 				
-				$reg=mysqli_query($idconn,"SELECT * FROM UTILISATEUR WHERE uti_pseudo='$pseudo'");  // executer la requète
+				$reg=mysqli_query($idconn,"SELECT * FROM utilisateur WHERE uti_pseudo='$pseudo'");  // executer la requète
 				$rows=mysqli_num_rows($reg);
 				if($rows==0){
-						mysqli_query($idconn, "INSERT INTO UTILISATEUR VALUES ('','$nom','$prenom','$adresseMail','$pseudo','$mdp','1')");
+						mysqli_query($idconn, "INSERT INTO utilisateur VALUES ('','$nom','$prenom','$adresseMail','$pseudo','$mdp','1')");
 						print('<span class="sucess">Bienvenue, '.$pseudo.', Vous êtes bien inscrit merci de votre confiance   
 						<a href="connexion.php">Connectez vous</a></span>');
 				}else print("<span class='error'>".$pseudo. "  est déja utilisé merci de le modifier </span>");
@@ -41,7 +41,7 @@ function connexion(){   //fonction de connexion
 		$mdp=$_POST['mdp'];
 		$mdp=md5($mdp);
 		if($pseudo&&$mdp){
-			$reg=mysqli_query($idconn, "SELECT * FROM UTILISATEUR WHERE uti_pseudo='$pseudo'and uti_mdp='$mdp'");
+			$reg=mysqli_query($idconn, "SELECT * FROM utilisateur WHERE uti_pseudo='$pseudo'and uti_mdp='$mdp'");
 			$rows=mysqli_num_rows($reg);
 			if($rows==1){
 				$_SESSION['pseudo']=$pseudo;
@@ -94,11 +94,11 @@ function reaction(){
 function enregistrer(){
 	GLOBAL $idconn;
 	$pseudo=$_SESSION['pseudo'];
-	$sql=mysqli_query($idconn,"select sum(fic_taille)from FICHIER inner join UTILISATEUR
+	$sql=mysqli_query($idconn,"select sum(fic_taille)from fichier inner join utilisateur
     on fic_iduti=uti_id	where uti_pseudo='$pseudo'");
     $memoire_u=mysqli_fetch_array($sql);
 	$res1=$memoire_u['sum(fic_taille)'];
-	$sql2=mysqli_query($idconn," select abo_memoire from ABONNEMENT inner join UTILISATEUR on
+	$sql2=mysqli_query($idconn," select abo_memoire from abonnement inner join utilisateur on
 	abo_id=uti_idabo where uti_pseudo='$pseudo'");
 	$memoire_g=mysqli_fetch_array($sql2);
 	$res2=$memoire_g['abo_memoire'];
@@ -117,7 +117,7 @@ function enregistrer(){
 							
 					}else{
 						
-						$sqlquery=mysqli_query($idconn,"select fic_nom from FICHIER INNER JOIN UTILISATEUR ON 
+						$sqlquery=mysqli_query($idconn,"select fic_nom from fichier INNER JOIN utilisateur ON 
 						fic_iduti=uti_id where uti_pseudo='$pseudo' and fic_nom='$nom'");
 						$rows=mysqli_num_rows($sqlquery);
 							if($rows==1){
@@ -125,9 +125,9 @@ function enregistrer(){
 									  </p>';
 								
 							}else{
-								$query=mysqli_query($idconn,"INSERT INTO FICHIER VALUES
+								$query=mysqli_query($idconn,"INSERT INTO fichier VALUES
 											('','$nom','$titre',null,'$taille','0',(select uti_id from 
-											UTILISATEUR WHERE uti_pseudo='$pseudo'))");
+											utilisateur WHERE uti_pseudo='$pseudo'))");
 								if(move_uploaded_file($_FILES['fichier']['tmp_name'],$file_dest)){
 									
 								
@@ -155,7 +155,7 @@ function afficher(){
 			GLOBAL $idconn;
 			$pseudo=$_SESSION['pseudo'];
 			$sqlquery="select * 
-						from FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+						from fichier INNER JOIN utilisateur ON fic_iduti=uti_id 
 						where uti_pseudo='$pseudo'" ;
 			
 						
@@ -198,11 +198,11 @@ function afficher(){
 		echo'<br/><br/><br/>';
 		
 		//calcule de la mémoire utlisée
-		           $sql=mysqli_query($idconn,"select sum(fic_taille)from FICHIER inner join UTILISATEUR
+		           $sql=mysqli_query($idconn,"select sum(fic_taille)from fichier inner join utilisateur
                    on fic_iduti=uti_id	where uti_pseudo='$pseudo'");
 				   $memoire_u=mysqli_fetch_array($sql);
 	               $res1=$memoire_u['sum(fic_taille)'];
-				   $sql2=mysqli_query($idconn," select abo_memoire from ABONNEMENT inner join UTILISATEUR on
+				   $sql2=mysqli_query($idconn," select abo_memoire from abonnement inner join utilisateur on
 					abo_id=uti_idabo where uti_pseudo='$pseudo'");
 					$memoire_g=mysqli_fetch_array($sql2);
 					$res2=$memoire_g['abo_memoire'];
@@ -221,13 +221,13 @@ function supprimer(){
 		if(isset($_GET['fic_id'])){
 			$id=$_GET['fic_id'];
 			/////////////
-			   $sql1=mysqli_query($idconn,"select fic_nom FROM FICHIER WHERE fic_id='$id'"); 
+			   $sql1=mysqli_query($idconn,"select fic_nom FROM fichier WHERE fic_id='$id'"); 
 			   $data=mysqli_fetch_array($sql1);
 				$nom=$data['fic_nom'];
 				@unlink('telecharger/'.$nom);
 			
 			/////////////
-			$sql=mysqli_query($idconn,"delete FROM FICHIER WHERE fic_id='$id'"); 
+			$sql=mysqli_query($idconn,"delete FROM fichier WHERE fic_id='$id'"); 
 				if($sql==true){  ?>
 				      <script> alert("Votre fichier a été bien supprimé");</script>
 					  
@@ -244,7 +244,7 @@ function telecharger(){
 	GLOBAL $idconn;
 	if(isset($_GET['fic_id'])){
 		$id=$_GET['fic_id'];
-		$sql=mysqli_query($idconn,"SELECT fic_nom FROM FICHIER WHERE fic_id='$id'"); 
+		$sql=mysqli_query($idconn,"SELECT fic_nom FROM fichier WHERE fic_id='$id'"); 
 		$rows=mysqli_num_rows($sql);
 		if($rows==true){
 				$row=mysqli_fetch_assoc($sql);
@@ -266,7 +266,7 @@ function partaged(){
 	
 		if(isset($_GET['fic_id'])){
 			$id=$_GET['fic_id'];
-			$sql=mysqli_query($idconn,"update FICHIER set fic_partage='1' where fic_id='$id'");
+			$sql=mysqli_query($idconn,"update fichier set fic_partage='1' where fic_id='$id'");
 			$rows=mysqli_num_rows($sql);
 			header("location:fichiers.php");
 		}
@@ -280,16 +280,16 @@ function dossierp(){
 		if(isset($_POST['motCle'])){
 			$motCle='%'.$_POST['motCle'].'%';
 			if($_POST['rechercher']=="1"){        //chercher par nom d'utilisateur
-			$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+			$req1="SELECT * FROM fichier INNER JOIN utilisateur ON fic_iduti=uti_id 
 			WHERE fic_partage='1' and uti_pseudo like '$motCle'";
 			}
 			if($_POST['rechercher']=="2"){     //chercher par nom de fichier
-			$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+			$req1="SELECT * FROM fichier INNER JOIN utilisateur ON fic_iduti=uti_id 
 			WHERE fic_partage='1' and fic_nomlo like '$motCle'";
 			}
 		}
 	}else
-		$req1="SELECT * FROM FICHIER INNER JOIN UTILISATEUR ON fic_iduti=uti_id 
+		$req1="SELECT * FROM fichier INNER JOIN utilisateur ON fic_iduti=uti_id 
 			WHERE fic_partage='1'";
 		
 	
@@ -341,7 +341,7 @@ function abonnement(){
 			$pseudo=$_SESSION['pseudo'];
 			$choix=$_POST['abonnement'];
 			if(isset($choix)){
-				$sql=mysqli_query( $idconn,"update UTILISATEUR set uti_idabo='$choix' where uti_pseudo='$pseudo'");
+				$sql=mysqli_query( $idconn,"update utilisateur set uti_idabo='$choix' where uti_pseudo='$pseudo'");
 				?>
 				<script>alert("Votre abonnement a été modifié,merci")</script>
 				<?php
